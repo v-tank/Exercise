@@ -8,15 +8,16 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
   <!--Stylesheet -->
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
   <div class="container">
     <div class="inputArea">
-      <input type="text" name="grocery-item" />
+      <p id="title">Grocery List</p>
+      <input type="text" name="grocery-item" placeholder="Enter an item" autofocus/>
       <input type="submit" value="Add To List" id="btn"/>
-      <h2>Grocery List</h2>
     </div>
     <div class="itemsArea">
       <ul id="list"></ul>
