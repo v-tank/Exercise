@@ -45,24 +45,25 @@ $(document).ready(function(e) {
 
   // function to display items to screen
   function displayItems() {
-    let $target = $("#list"); // create reference to list on HTML page
+    let $target = $("#list tbody"); // create reference to list on HTML page
     $target.empty();  // empty out the list before appending
 
     // if either of the arrays have values, display them
     if ((toBuy.length > 0) || (bought.length > 0)) {
       $("#clear-data").show();
 
-      // loop through array and append the item to screen
+      // loop through array and append the item to screen in reverse order to add latest item to the top
       for (let index = toBuy.length - 1; index >= 0; index--) {
-        let $el = $("<li>");
-        $el.html("<button class='remove' data-index='" + index + "'>x</button>" + toBuy[index]);
-        $target.append($el);
+        $($target).append("<tr>\
+          <td><button class='remove' data-index='" + index + "'>X</button></td> \
+          <td style='text-align: left'>" + toBuy[index] + "</td> \
+          </tr>");
       }
 
       bought.forEach(boughtItem => {
-        let $el = $("<li>");
-        $el.text(boughtItem).addClass('bought');
-        $target.append($el);
+        $($target).append("<tr>\
+          <td class='bought' colspan='2'>" + boughtItem + "</td> \
+          </tr>");
       });
 
     } else {

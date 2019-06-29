@@ -1,6 +1,14 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Std Extra Light', sans-serif;
+  font-size: 16px;
 }
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Extra Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Extra Light'), url('../fonts/avant-garde-extra-light.woff') format('woff');
+  }
 
 .container {
   width: 75%;
@@ -14,7 +22,7 @@ body {
   margin: auto;
 
   text-align: center;
-  border: 5px solid #54b1e0;
+  border: 5px solid #cc0000;
   padding: 20px;
 
   display: grid;
@@ -37,26 +45,31 @@ body {
 #title {
   font-size: 40px;
   margin: 5px;
-  color: #f4aa57;
+  color: #231f20;
 }
 
 input[type="submit"] {
-  border: 0;
-  color: #fff;
+  color: #cc0000;
   font-size: 12px;
-  background-color: #4a577b;
+  background-color: #fff;
+  border: 1px solid #696969;
   padding: 6px;
 }
 
 input[type="submit"]:hover {
-  color: #fff;
-  background-color: #5676ce;
+  color: #cc0000;
+  background-color: #ececec;
 }
 
 input[type="text"] {
   height: 25px;
   width: 200px;
   text-align: center;
+}
+
+#clear-data {
+  margin-top: 5px;
+  color: #cc0000;
 }
 
 a {
@@ -67,15 +80,22 @@ ul {
   padding: 0;
 }
 
-#list li {
-  list-style-type: none;
-  margin: 8px;
+#list {
+  margin: 0 auto;
 }
 
 .bought {
   text-decoration: line-through;
+  color: #888888;
 }
 
-.remove {
-  margin-right: 5px;
+button.remove {
+  margin-right: 10px;
+  border: 1px solid #696969;
+  background-color: #fff;
+}
+
+button.remove:hover {
+  color: #cc0000;
+  border: 1px solid #cc0000;
 }
