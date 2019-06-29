@@ -59,6 +59,10 @@ input[type="text"] {
   text-align: center;
 }
 
+a {
+  display: none;
+}
+
 ul {
   padding: 0;
 }

@@ -25,6 +25,13 @@ $(document).ready(function(e) {
     displayItems();   // refresh display
   });
 
+  // on-click listener to clear all items
+  $(document).on('click', '#clear-data', function(e) {
+    clearAll();
+    syncLocalStorage();
+    displayItems();
+  });
+
   // function to add item to list
   function addItemToList(val) {
     toBuy.push(val);
@@ -43,6 +50,7 @@ $(document).ready(function(e) {
 
     // if either of the arrays have values, display them
     if ((toBuy.length > 0) || (bought.length > 0)) {
+      $("#clear-data").show();
 
       // loop through array and append the item to screen
       for (let index = toBuy.length - 1; index >= 0; index--) {
@@ -58,6 +66,9 @@ $(document).ready(function(e) {
       });
 
     } else {
+      // hide clear button if no items are showing
+      $("#clear-data").hide();
+
       // if no items are found, display below message
       $target.append('No items in the list. Add something before you forget!');
     }
@@ -82,7 +93,13 @@ $(document).ready(function(e) {
     }
   }
 
-  // check if items exist in localStorage upon page-load
+  // empties data
+  function clearAll() {
+    toBuy = [];
+    bought = [];
+  }
+
+  // check if items exist in localStorage upon page-load and display them
   fetchLocalStorage();
   displayItems();
 });
