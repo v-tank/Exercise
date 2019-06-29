@@ -45,15 +45,15 @@ $(document).ready(function(e) {
     if ((toBuy.length > 0) || (bought.length > 0)) {
 
       // loop through array and append the item to screen
-      toBuy.forEach((todo, index) => {
+      for (let index = toBuy.length - 1; index >= 0; index--) {
         let $el = $("<li>");
-        $el.html("<button class='remove' data-index='" + index + "'>x</button>" + todo);
+        $el.html("<button class='remove' data-index='" + index + "'>x</button>" + toBuy[index]);
         $target.append($el);
-      });
+      }
 
-      bought.forEach(doneTask => {
+      bought.forEach(boughtItem => {
         let $el = $("<li>");
-        $el.text(doneTask).addClass('bought');
+        $el.text(boughtItem).addClass('bought');
         $target.append($el);
       });
 
